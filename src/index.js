@@ -14,12 +14,12 @@ import {
 } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDmXgb_58lO7aK_ujN37pGlNxzWGEU0YpI",
-  authDomain: "fb9-sandbox.firebaseapp.com",
-  projectId: "fb9-sandbox",
-  storageBucket: "fb9-sandbox.appspot.com",
-  messagingSenderId: "867529587246",
-  appId: "1:867529587246:web:dc754ab7840c737f47bdbf"
+  apiKey: "AIzaSyBvBiKlBQITuULjETWVUgmQX8_IxI1L0Qc",
+  authDomain: "projet1-e9f0d.firebaseapp.com",
+  projectId: "projet1-e9f0d",
+  storageBucket: "projet1-e9f0d.appspot.com",
+  messagingSenderId: "784795276040",
+  appId: "1:784795276040:web:2c781db8c36087896812bd"
 }
 
 // init firebase
@@ -33,7 +33,7 @@ const auth = getAuth()
 const colRef = collection(db, 'books')
 
 // queries
-const q = query(colRef, where("author", "==", "patrick rothfuss"), orderBy('createdAt'))
+const q = query(colRef, orderBy('createdAt'))
 
 // realtime collection data
 const unsubCol = onSnapshot(q, (snapshot) => {
@@ -73,7 +73,7 @@ deleteBookForm.addEventListener('submit', (e) => {
 })
 
 // fetching a single document (& realtime)
-const docRef = doc(db, 'books', 'gGu4P9x0ZHK9SspA1d9j')
+const docRef = doc(db, 'books', 'vAh2oUihtda5OxMWkIu4')
 
 const unsubDoc = onSnapshot(docRef, (doc) => {
   console.log(doc.data(), doc.id)
